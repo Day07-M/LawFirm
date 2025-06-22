@@ -1,40 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/styles/style.css">
+<%- include('partials/header') %>
 
-    <title>Document</title>
-</head>    
-<body>
-  <div class="cover-container">
-    <header class="navbar">
-      <div class="logo">Joice LawFirm</div>
-      <nav>
-        <ul class="nav-links">
-          <li><a href="#" class="active">Home</a></li>
-          <li><a href="#">Features</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </nav>
-    </header>
-
-    <main class="main-content">
-      <h1>Where expertise meets integrity—your legal solution starts here.</h1>
-      <p>At Joice LawFirm, we combine deep legal expertise with unwavering integrity to deliver tailored solutions for your unique needs. With us, you get clear guidance and committed representation every step of the way.</p>
-      <a href="#" class="btn">Learn more</a>
+    <main class="main-content" >
+      <h1 data-aos="zoom-in" data-aos-delay="200"><%= quotes %></h1>
+      <p data-aos="fade-in" data-aos-delay="300">At Joice LawFirm, we combine deep legal expertise with unwavering integrity to deliver tailored solutions for your unique needs. With us, you get clear guidance and committed representation every step of the way.</p>
+      <a href="/features" class="btn">Learn more</a>
     </main>
 
-    <footer class="footer">
-
-        <% const month = ["January","February","March","April","May","June","July","August","September","October","November","December"]; %>
-        <% const d = new Date(); %>
-        <% let Monthname = month[d.getMonth()]; %>
-        <% const date = new Date().getFullYear(); %>
-      <p>All Rights Reserved © <%= date %> <%= Monthname %></p>
-    </footer>
-  </div>
-</body>
-</html>
+<%- include('partials/footer') %>
