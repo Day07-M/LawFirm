@@ -2,7 +2,7 @@ import express from "express";
 import axios from "axios";
 
 const app = express();
-const port = 3000;
+const port = 3200;
 const law = ["Your legal peace of mind starts here.", "Trusted advice. Proven results.", "You deserve clear answers and confident representation.",
 "Guiding clients through complex legal issues—every step of the way.", "Legal strategy backed by results.",
 "Every case is personal. Every client matters.", "We listen. We advise. We advocate.",

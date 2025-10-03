@@ -2,8 +2,8 @@
         <% const month = ["January","February","March","April","May","June","July","August","September","October","November","December"]; %>
         <% const d = new Date(); %>
         <% let Monthname = month[d.getMonth()]; %>
-        <% const date = new Date().getFullYear(); %>
-      <p>All Rights Reserved © <%= date %> <%= Monthname %></p>
+        <% const date = new Date().getFullYear();%>
+      <p id="time">All Rights Reserved © <%= date %> <%= Monthname %></p>
     </footer>
   </div>
 
@@ -17,6 +17,18 @@ AOS.init({
   once: true,
   mirror: false // don't repeat on scroll-up
 });
+
+// function getSeconds() {
+//       const now = new Date();
+//       return now.getSeconds();
+//     }
+
+// function updateSeconds() {
+//       document.getElementById('time').textContent = getSeconds();
+//     }
+
+//     updateSeconds(); 
+//     setInterval(updateSeconds, 1000); 
 </script>
 </body>
 </html>

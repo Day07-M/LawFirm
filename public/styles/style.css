@@ -1,16 +1,26 @@
-/* Reset and base styles */
+
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  /* box-sizing: border-box; */
+}
+
+h1, h2, h3 {
+  font-family: 'DM Serif Display', serif;
+}
+
+body, p, a, li {
+  font-family: 'Lato', sans-serif;
 }
 
 body, html {
+  cursor: url('/images/cursor3.png'), auto;
   height: 100%;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #1b1f23;
   color: #ffffff;
   line-height: 1.6;
+  margin: 0;
 }
 
 
@@ -19,10 +29,6 @@ a {
   color: #ffffff;
   text-decoration: none;
 }
-
-/* a:hover {
-   text-decoration: underline; 
-} */
 
 
 .cover-container {
@@ -82,14 +88,15 @@ header {
 .main-content {
   background-image: url('/images/lawyer3.jpg');
   background-size: cover;
-  
+  height: 100%;
+
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: 2rem;
+  padding: 4rem;
 }
 
 /* .main-content::before {
@@ -105,6 +112,7 @@ header {
 } */
 
 .main-content h1 {
+  
   font-size: 2.5rem;
   margin-bottom: 1rem;
   text-align: center;
@@ -120,6 +128,44 @@ header {
   padding: 0 1rem;
   text-shadow: 2px 2px 6px rgba(0, 0, 0, 1.5);
 }
+
+
+
+.company-profile {
+  padding: 8rem 4rem;
+  background-color: antiquewhite;
+  /* background-image:linear-gradient(to right, rgba(255, 255, 255, 0.336),rgba(255, 255, 255, 0),rgba(206, 206, 206, 0.356)  80%), url('/images/lawyer4.jpg'); */
+  background-size: cover;
+}
+
+.profile-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  
+}
+
+
+.company-description {
+  flex: 2 1 500px;
+  text-align: right;
+  font-weight: 700;
+}
+
+.company-description h2 {
+  color: #1b1f23;
+  font-size: 1.8rem;
+  margin-bottom: 0.5rem;
+}
+
+.company-description p {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: #333;
+}
+
+
 
 .btn {
   padding: 0.75rem 1.5rem;
@@ -139,16 +185,29 @@ header {
 
 
 .footer {
-  text-align: center;
-  padding: 1rem;
+  /* text-align: center;
+  padding: 0.5rem;
   font-size: 0.85rem;;
-  opacity: 0.7;
+  opacity: 0.7; */
+
+  position: relative;
+  /* width: 100%; */
+  /* height: 100vh; */
+  /* background: #292929; */
+  min-height: 70px;
+  padding: 20px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
 }
 
 
 
 .features-section {
-  background-image: url('/images/lawyer1.jpg');
+  /* background-image:linear-gradient( rgba(255,255,255,0),rgba(255, 255, 255, 0.938),rgb(206, 206, 206)  ),
+   url('/images/lawyer1.jpg'); */
   background-size: cover;
   padding: 4rem 2rem;
   /* background-color: #ffffff; */
@@ -162,45 +221,95 @@ header {
   color: #ffffff;
 }
 
-.features-grid,
+
+.services-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+}
+
+.service-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+  padding: 2rem 1.5rem;
+  width: 260px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+}
+
+.icon {
+  font-size: 2.5rem;
+  color: #b30000;
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.4s ease;
+  color: #333;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+
+.service-card:hover .service-description {
+  opacity: 1;
+  max-height: 200px; 
+  margin-top: 1rem;
+}
+
+
+
+
 .advantages-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 2rem;
-  margin-bottom: 3rem;
+  margin-bottom: 3rem;;
+
 }
 
-.feature-item,
+
 .advantage-item {
   background: #fff;
   padding: 1.5rem;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   transition: transform 0.2s ease;
+
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
 }
 
-.feature-item:hover,
 .advantage-item:hover {
-  transform: translateY(-4px);
+  transform: translateY(-10px);
 }
 
-.feature-item .icon {
-  align-content: center;
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
-  color: #e53935;
-}
 
-.feature-item h3,
-.advantage-item h3 {
+
+.advantage-item h3,
+.service-title {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  color: #e53935;
+  font-weight: 600;
+  color: #b30000;
 }
 
-.feature-item p,
+
 .advantage-item p, 
-.feature-item li, .advantage-item li {
+.advantage-item li {
   color: #333;
   font-size: 0.95rem;
   line-height: 1.5;
@@ -269,7 +378,11 @@ header {
 
 .contact-info-section {
   padding: 3rem 2rem;
-  background-color: #f5f5f5;
+  background-image:linear-gradient( rgba(255, 255, 255, 0.507),rgba(255, 255, 255, 0.295),rgba(206, 206, 206, 0.527)  ), url('/images/lawyer4.jpg');
+
+  /* background-image:linear-gradient(rgba(206, 206, 206, 0.9), rgba(255,255,255,0),rgba(255,255,255,0)) ,url('/images/background2.jpg'); */
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .contact-info-grid {
@@ -280,20 +393,31 @@ header {
 }
 
 .contact-info-section p {
-    color: #1b1f23;
+    color: #ffffff;
+    font-weight: 700;
 }
 
 .contact-info-section h2 {
   font-size: 1.6rem;
   margin-bottom: 0.5rem;
-  color: black;
+  color: rgb(253, 253, 253);
+  font-weight: 700;
 }
 
 .contact-info-section h4 {
   margin-bottom: 0.3rem;
-  color: #e53935;
+  color: black;
 }
 
+
+
+.team{
+  background-color: #ddd;
+}
+
+.team-profile{
+  width: 100px;
+}
 
 /* Medium dickus */
 @media (max-width: 768px) {
@@ -308,6 +432,8 @@ header {
   .btn {
     font-size: 0.95rem;
   }
+
+
 }
 
 /* Small dickus */
